@@ -16,31 +16,40 @@ namespace BookStore
     {
 
         [OperationContract]
+        [WebInvoke(Method ="GET",RequestFormat =WebMessageFormat.Json,ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<Book> CheckStock(int isbn);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<List<Book>> CheckStocks(List<int> isbns);
 
         [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<List<Author>> GetAuthors();
 
         [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<List<Book>> GetBooks();
 
 
         [OperationContract]
+        [WebInvoke(Method ="POST",RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<List<Book>> GetAuthorBooks(Author author);
 
         [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<List<Publisher>> GetPublishers();
 
         [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<List<Book>> GetPublisherBooks(Publisher publisher);
 
         [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<bool> IsValidISBN(int isbn);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ResultDataService<bool> AddBookToStock(Book book);
 
         // TODO: Hizmet işlemlerinizi buraya ekleyin
